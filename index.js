@@ -20,7 +20,7 @@ module.exports = function ngDocParser(opts) {
     START_TAG: '@ngdoc'
   };
 
-  var options = _.assign({}, defaults, opts);
+  var options = _.assign({}, defaults);//var options = _.assign({}, defaults, opts);
 
   return through.obj(function (chunk, enc, callback) {
 
@@ -47,7 +47,7 @@ module.exports = function ngDocParser(opts) {
       })
 
       .map(function (comment) {
-        var parser = new DocCommentParser(comment.uncommentedValue);
+        var parser = new DocCommentParser(comment.uncommentedValue, opts);
         parser.run();
         return parser.data;
       })

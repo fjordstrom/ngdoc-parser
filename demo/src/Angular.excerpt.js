@@ -4,6 +4,8 @@
 /**
  * @ngdoc function
  * @name angular.lowercase
+ * @methodOf angular
+ * @version 1.0.1
  * @module ng
  * @kind function
  *

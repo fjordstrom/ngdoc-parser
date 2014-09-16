@@ -1,2 +1,4 @@
 node_modules
 out
+demo/out
+.idea
