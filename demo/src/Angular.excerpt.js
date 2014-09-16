@@ -2,16 +2,29 @@
 
 
 /**
- * @ngdoc function
- * @name angular.lowercase
- * @methodOf angular
+ * @ngdoc service
+ * @name test
+ * @description test module meant to contain a method
+ */
+
+/**
+ * @ngdoc method
+ * @name lowercase
+ * @methodOf test
  * @version 1.0.1
- * @module ng
  * @kind function
  *
  * @description Converts the specified string to lowercase.
  * @param {string} string String to be converted to lowercase.
  * @returns {string} Lowercased string.
+ */
+
+/**
+ * @ngdoc method
+ * @name somethingElse
+ * @methodOf test
+ * @version whatever
+ * @description something
  */
 
 

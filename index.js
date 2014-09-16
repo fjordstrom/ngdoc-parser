@@ -16,13 +16,13 @@ var LEADING_STAR = /^[^\S\r\n]*\*[^\S\n\r]?/gm;
 
 module.exports = function ngDocParser(opts) {
 
-  var defaults = {
+    var defaults = {
     START_TAG: '@ngdoc'
-  };
+    };
 
-  var options = _.assign({}, defaults);//var options = _.assign({}, defaults, opts);
+    var options = _.assign({}, defaults);//var options = _.assign({}, defaults, opts);
 
-  return through.obj(function (chunk, enc, callback) {
+    return through.obj(function (chunk, enc, callback) {
 
     var parsingResult = esprima.parse(String(chunk.contents), {
       loc: true,
@@ -52,10 +52,28 @@ module.exports = function ngDocParser(opts) {
         return parser.data;
       })
       .value();
+    //console.log(jsdoc);
 
-    chunk.contents = new Buffer(JSON.stringify(jsdoc));
-    return callback(null, chunk);
-  });
+    var finalDoc = {};
+
+    jsdoc.forEach(function(item,key) {
+        if(typeof(item['methodOf']) === "undefined" || item['methodOf'] === null) {
+            finalDoc[item['name']] = item;
+            delete jsdoc[key];
+        }
+        //console.log(finalDoc);
+    });
+
+    jsdoc.forEach(function(item,key) {
+        if(typeof(finalDoc[item['methodOf']]['methods'])==="undefined" || finalDoc[item['methodOf']]['methods'] === null) {
+            finalDoc[item['methodOf']]['methods'] = [];
+        }
+        finalDoc[item['methodOf']]['methods'].push(item);
+    });
+
+    chunk.contents = new Buffer(JSON.stringify(finalDoc));
+        return callback(null, chunk);
+    });
 
 
 };
