@@ -52,7 +52,6 @@ module.exports = function ngDocParser(opts) {
         return parser.data;
       })
       .value();
-    //console.log(jsdoc);
 
     var finalDoc = {};
 
@@ -61,7 +60,6 @@ module.exports = function ngDocParser(opts) {
             finalDoc[item['name']] = item;
             delete jsdoc[key];
         }
-        //console.log(finalDoc);
     });
 
     jsdoc.forEach(function(item,key) {
