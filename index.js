@@ -56,17 +56,28 @@ module.exports = function ngDocParser(opts) {
     var finalDoc = {};
 
     jsdoc.forEach(function(item,key) {
-        if(typeof(item['methodOf']) === "undefined" || item['methodOf'] === null) {
-            finalDoc[item['name']] = item;
-            delete jsdoc[key];
+        if( (typeof(item['methodOf']) === "undefined" || item['methodOf'] === null) &&
+            (typeof(item['eventOf']) === "undefined" || item['eventOf'] === null) ) {
+                finalDoc[item['name']] = item;
+                delete jsdoc[key];
         }
     });
 
     jsdoc.forEach(function(item,key) {
-        if(typeof(finalDoc[item['methodOf']]['methods'])==="undefined" || finalDoc[item['methodOf']]['methods'] === null) {
-            finalDoc[item['methodOf']]['methods'] = [];
+        if((typeof(item['methodOf']) !== "undefined" && item['methodOf'] !== null)) {
+            if(typeof(finalDoc[item['methodOf']]['methods'])==="undefined" || finalDoc[item['methodOf']]['methods'] === null) {
+                finalDoc[item['methodOf']]['methods'] = [];
+            }
+            finalDoc[item['methodOf']]['methods'].push(item);
         }
-        finalDoc[item['methodOf']]['methods'].push(item);
+        else {
+            if((typeof(item['eventOf']) !== "undefined" && item['eventOf'] !== null)) {
+                if(typeof(finalDoc[item['eventOf']]['events'])==="undefined" || finalDoc[item['eventOf']]['events'] === null) {
+                    finalDoc[item['eventOf']]['events'] = [];
+                }
+                finalDoc[item['eventOf']]['events'].push(item);
+            }
+        }
     });
 
     chunk.contents = new Buffer(JSON.stringify(finalDoc));

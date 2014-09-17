@@ -8,6 +8,13 @@
  */
 
 /**
+ * @ngdoc event
+ * @name someEvent
+ * @description test desc
+ * @eventOf test
+ */
+
+/**
  * @ngdoc method
  * @name lowercase
  * @methodOf test
@@ -168,4 +175,3 @@
  *     to items in conjunction with a tracking expression.
  *
  */
-
