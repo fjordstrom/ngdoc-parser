@@ -12,6 +12,7 @@
  * @name someEvent
  * @description test desc
  * @eventOf test
+ * @eventType Go on something
  */
 
 /**
