@@ -4,6 +4,7 @@
 /**
  * @ngdoc service
  * @name test
+ * @param {JSON_Object} nostring pling pling
  * @description test module meant to contain a method
  */
 
