@@ -32,8 +32,12 @@
 * @name emQuickGameList
 * @restrict A
 * @description This `directive` will send to the user a quick game list
+ * @require ^fuckOff a require
+ * asd
+ * asd
+ * asd
 * @param {String} casinoCategory Name of games category
-* @param {Object} emQuickGameList <Please fill this description>
+* @param {!Object} emQuickGameList <Please fill this description>
 * @param {Integer=} gamesPerPage Integer which represents how many games will be displayed on the page
 * @param {Integer=} startingGamesNumber Starting number of shown games
 * @param {Boolean=} useLiveTables True or False
