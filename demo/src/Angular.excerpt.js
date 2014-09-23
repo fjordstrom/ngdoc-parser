@@ -36,9 +36,9 @@
  * asd
  * asd
  * asd
-* @param {String} casinoCategory Name of games category
-* @param {!Object} emQuickGameList <Please fill this description>
-* @param {Integer=} gamesPerPage Integer which represents how many games will be displayed on the page
+* @param {String} =casinoCategory Name of games category
+* @param {!Object} @emQuickGameList <Please fill this description>
+* @param {Integer=5} &gamesPerPage Integer which represents how many games will be displayed on the page
 * @param {Integer=} startingGamesNumber Starting number of shown games
 * @param {Boolean=} useLiveTables True or False
 * @example Example that shows simple use of this directive
