@@ -6,6 +6,17 @@
  * @name test
  * @param {JSON_Object} nostring pling pling
  * @description test module meant to contain a method
+ * `some text`
+ * ``test 2 2 ``
+ * ```
+ * qwerqwrweter
+ * ```
+ *
+ * ```javascript
+ * asdfghj
+ * sdfghj
+ * erthy
+ * ```
  */
 
 /**
@@ -15,6 +26,29 @@
  * @eventOf test
  * @eventType Go on something
  */
+
+/**
+* @ngdoc directive
+* @name emQuickGameList
+* @restrict A
+* @description This `directive` will send to the user a quick game list
+* @param {String} casinoCategory Name of games category
+* @param {Object} emQuickGameList <Please fill this description>
+* @param {Integer=} gamesPerPage Integer which represents how many games will be displayed on the page
+* @param {Integer=} startingGamesNumber Starting number of shown games
+* @param {Boolean=} useLiveTables True or False
+* @example Example that shows simple use of this directive
+*  <example>
+*    <file name="index.html">
+    *        <div em-quick-game-list
+        *            use-live-tables="true"
+        *            casino-category="{'ALL': 'ALL', 'FEATURED': 'FEATUREDGAMES'">
+        *        </div>
+    *    </file>
+*  </example>
+*/
+
+
 
 /**
  * @ngdoc method
@@ -34,6 +68,7 @@
  * @methodOf test
  * @version whatever
  * @description something
+ * @return {string} test2 string.
  */
 
 
