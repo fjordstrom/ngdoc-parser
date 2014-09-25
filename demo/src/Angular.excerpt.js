@@ -27,6 +27,17 @@
  * @eventType Go on something
  */
 
+
+/**
+* @ngdoc event
+* @name addToFavorites
+* @eventOf emQuickGameList
+* @eventType Broadcast on Actual state
+* @description This `event` will add the game on Favorite list
+* @param {Object} event Event
+* @param {Object} game The game which will be added as favorite
+*/
+
 /**
 * @ngdoc directive
 * @name emQuickGameList
@@ -77,9 +88,14 @@
 
 
 /**
+ * @ngdoc anything
+ * @name something
+ */
+
+/**
  * @ngdoc directive
  * @name ngForm
- * @restrict EAC
+ * @restrict A
  *
  * @description
  * Nestable alias of {@link ng.directive:form `form`} directive. HTML
