@@ -39,6 +39,24 @@
 */
 
 /**
+* @ngdoc method
+* @methodOf emAccountServicesAccount
+* @name changePassword
+* @description Change the password of the current logged-in user
+* @param {Object}
+*
+*        param object containing parameters
+*
+*      - `oldPassword` {String}: The current password of the logged-in user
+*      - `newPassword` {String}: The new password to be changed to
+*      - `captchaPublicKey` {String}: Google reCAPTCHA public key
+*      - `captchaChallenge` {String}: Google reCAPTCHA challenge
+*      - `captchaResponse` {String}: Google reCAPTCHA response
+*  @returns {Boolean} true if operation was completed successfully
+*/
+
+
+/**
 * @ngdoc directive
 * @name emQuickGameList
 * @restrict A
