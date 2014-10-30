@@ -43,9 +43,7 @@
 * @methodOf emAccountServicesAccount
 * @name changePassword
 * @description Change the password of the current logged-in user
-* @param {Object}
-*
-*        param object containing parameters
+* @param {Object} param object containing parameters
 *
 *      - `oldPassword` {String}: The current password of the logged-in user
 *      - `newPassword` {String}: The new password to be changed to
@@ -250,3 +248,62 @@
  *     to items in conjunction with a tracking expression.
  *
  */
+
+
+
+
+
+
+
+'use strict';
+
+/**
+ * @ngdoc provider
+ * @name $controllerProvider
+ * @description
+ * The {@link ng.$controller $controller service} is used by Angular to create new
+ * controllers.
+ *
+ * This provider allows controller registration via the
+ * {@link ng.$controllerProvider#register register} method.
+ */
+
+
+    /**
+     * @ngdoc method
+     * @name $controllerProvider#register
+     * @param {string|Object} name Controller name, or an object map of controllers where the keys are
+     *    the names and the values are the constructors.
+     * @param {Function|Array} constructor Controller constructor fn (optionally decorated with DI
+     *    annotations in the array notation).
+     */
+
+    /**
+     * @ngdoc method
+     * @name $controllerProvider#allowGlobals
+     * @description If called, allows `$controller` to find controller constructors on `window`
+     */
+
+        /**
+         * @ngdoc service
+         * @name $controller
+         * @requires $injector
+         *
+         * @param {Function|string} constructor If called with a function then it's considered to be the
+         *    controller constructor function. Otherwise it's considered to be a string which is used
+         *    to retrieve the controller constructor using the following steps:
+         *
+         *    * check if a controller with given name is registered via `$controllerProvider`
+         *    * check if evaluating the string on the current scope returns a constructor
+         *    * if $controllerProvider#allowGlobals, check `window[constructor]` on the global
+         *      `window` object (not recommended)
+         *
+         * @param {Object} locals Injection locals for Controller.
+         * @return {Object} Instance of given controller.
+         *
+         * @description
+         * `$controller` service is responsible for instantiating controllers.
+         *
+         * It's just a simple call to {@link auto.$injector $injector}, but extracted into
+         * a service, so that one can override this service with [BC version](https://gist.github.com/1649788).
+         */
